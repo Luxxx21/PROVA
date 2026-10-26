@@ -1,95 +1,161 @@
-Sezione {
-    display: block;
-    font-family: Arial, sans-serif;
-    max-width: 900px;
-    margin: 20px auto;
-    color: #222;
+
+/* ==============================
+   STILE PAGINA - SEZIONE 5AIA
+   ============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-Sezione::before {
-    content: "Assegnazione dispositivi - Classe 5AIA";
-    display: block;
-    font-size: 26px;
-    font-weight: bold;
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #eef4ff, #dce7f7);
+    color: #263449;
+    min-height: 100vh;
+    padding: 40px 25px;
+}
+
+/* Titolo principale */
+
+h1 {
     text-align: center;
-    margin-bottom: 25px;
+    font-size: 2.5rem;
+    color: #ffffff;
+    background: linear-gradient(135deg, #123b70, #2878c8);
+    padding: 30px 20px;
+    margin: 0 auto 35px;
+    max-width: 1200px;
+    border-radius: 16px;
+    box-shadow: 0 8px 22px rgba(18, 59, 112, 0.2);
+    letter-spacing: 1px;
 }
 
-Alunno {
-    display: block;
-    border: 1px solid #bbb;
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 8px;
-    background-color: #f7f9fc;
+/* Contenitore della tabella */
+
+table {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: #ffffff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(25, 55, 90, 0.12);
 }
 
-Nome, Cognome {
-    display: inline;
-    font-size: 18px;
-    font-weight: bold;
+/* Intestazioni */
+
+thead {
+    background: linear-gradient(135deg, #174a83, #246db4);
+    color: #ffffff;
 }
 
-Nome {
-    margin-right: 5px;
+th {
+    padding: 19px 15px;
+    text-align: left;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    border-bottom: 3px solid #4aa3ff;
 }
 
-Dispositivo {
-    display: block;
-    margin-top: 10px;
-    padding-top: 10px;
-    border-top: 1px solid #ddd;
+/* Celle */
+
+td {
+    padding: 17px 15px;
+    font-size: 0.95rem;
+    border-bottom: 1px solid #e5ebf3;
+    transition: background-color 0.2s ease;
 }
 
-Dispositivo::before {
-    content: "Tipo: " attr(tipo);
-    display: block;
-    font-weight: bold;
-    color: #176b87;
-    margin-bottom: 8px;
+/* Righe alternate */
+
+tbody tr:nth-child(odd) {
+    background-color: #ffffff;
 }
 
-Dispositivo[codice]::after {
-    content: "Codice dispositivo: " attr(codice);
-    display: block;
-    font-weight: bold;
-    margin-top: 8px;
+tbody tr:nth-child(even) {
+    background-color: #f2f6fc;
 }
 
-os, app, Data_assegnazione, Data_utilizzo {
-    display: block;
-    margin: 5px 0;
+/* Effetto mouse */
+
+tbody tr:hover {
+    background-color: #dcecff;
 }
 
-os::before {
-    content: "Sistema operativo: ";
-    font-weight: bold;
+/* Ultima riga senza bordo inferiore */
+
+tbody tr:last-child td {
+    border-bottom: none;
 }
 
-app::before {
-    content: "Applicazione: ";
-    font-weight: bold;
+/* Evidenzia i nomi */
+
+tbody td:first-child {
+    font-weight: 600;
+    color: #174a83;
 }
 
-Data_assegnazione::before {
-    content: "Data assegnazione: ";
-    font-weight: bold;
+/* Evidenzia i codici */
+
+tbody td:nth-child(4) {
+    font-weight: 700;
+    color: #246db4;
 }
 
-Data_utilizzo::before {
-    content: "Data utilizzo: ";
-    font-weight: bold;
+/* Piccoli dettagli tipografici */
+
+td,
+th {
+    vertical-align: middle;
 }
 
-@media print {
-    Sezione {
-        max-width: 100%;
-        margin: 0;
+/* Adattamento per tablet e smartphone */
+
+@media screen and (max-width: 1000px) {
+    body {
+        padding: 25px 15px;
     }
 
-    Alunno {
-        background-color: white;
-        break-inside: avoid;
-        border-radius: 0;
+    h1 {
+        font-size: 2rem;
+        padding: 24px 15px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    th,
+    td {
+        padding: 14px 12px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        padding: 18px 10px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+        margin-bottom: 22px;
+        border-radius: 10px;
+    }
+
+    th {
+        font-size: 0.75rem;
+    }
+
+    td {
+        font-size: 0.85rem;
     }
 }
